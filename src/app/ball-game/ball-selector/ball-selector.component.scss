@@ -1,0 +1,14 @@
+h1 {
+  text-align: center;
+}
+
+.ball-drum {
+  margin-top: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  app-single-ball {
+    margin: 0 20px;
+  }
+}

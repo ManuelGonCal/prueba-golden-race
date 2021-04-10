@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { BallEntity } from 'src/app/Models/BallEntity';
 
 @Component({
   selector: 'app-single-ball',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./single-ball.component.scss']
 })
 export class SingleBallComponent implements OnInit {
+  @Input()
+  ball: BallEntity;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
   }
 
+  toggleBall() {
+    this.ball.isSelected = !this.ball.isSelected;
+  }
 }

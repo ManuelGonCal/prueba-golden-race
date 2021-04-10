@@ -1,1 +1,7 @@
-<p>single-ball works!</p>
+<span class="ball"
+  style="background-color: {{ball.color}}"
+  (click)="toggleBall()"
+  [ngClass]="{'selected': ball.isSelected}"
+>
+  {{ ball.number }}
+</span>

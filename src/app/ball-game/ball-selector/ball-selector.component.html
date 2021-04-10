@@ -1,1 +1,7 @@
-<p>ball-selector works!</p>
+<h1>MAKE YOUR CHOICE</h1>
+<div class="ball-drum">
+  <app-single-ball
+  *ngFor="let ball of ballList"
+  [ball]="ball">
+  </app-single-ball>
+</div>
