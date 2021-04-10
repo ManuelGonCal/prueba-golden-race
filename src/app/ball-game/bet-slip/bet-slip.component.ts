@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-bet-slip',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bet-slip.component.scss']
 })
 export class BetSlipComponent implements OnInit {
+  @Input()
+  ballsAmount: number;
 
   constructor() { }
 

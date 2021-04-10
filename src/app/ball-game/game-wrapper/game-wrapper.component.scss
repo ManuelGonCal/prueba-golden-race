@@ -1,0 +1,10 @@
+.game-wrapper {
+  display: flex;
+
+  app-ball-selector {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
