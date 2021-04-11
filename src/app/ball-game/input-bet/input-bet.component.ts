@@ -31,9 +31,7 @@ export class InputBetComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-    this.selectedBalls = this.drumService.selectedAmount;
-  }
+  ngOnInit(): void {}
 
   getErrorMessage() {
     if (this.betControl.hasError('required')) {

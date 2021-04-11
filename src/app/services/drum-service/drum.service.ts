@@ -6,11 +6,9 @@ import { BallEntity } from 'src/app/Models/BallEntity';
 })
 export class DrumService {
   drum: BallEntity[];
-  selectedAmount: number;
 
   constructor() {
     this.drum = [];
-    this.selectedAmount = 0;
   }
 
   InitializeDrum(amount: number) {
@@ -44,9 +42,5 @@ export class DrumService {
     }
 
     return color;
-  }
-
-  toggleBalls(increase: number) {
-    this.selectedAmount = this.selectedAmount + increase;
   }
 }
