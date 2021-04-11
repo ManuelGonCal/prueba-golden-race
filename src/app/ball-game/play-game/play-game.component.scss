@@ -9,5 +9,10 @@
     color: white;
     background-color: #2491fa;
     border: 1px solid black;
+
+    &.disabled {
+      background-color: gray;
+      pointer-events: none;
+    }
   }
 }

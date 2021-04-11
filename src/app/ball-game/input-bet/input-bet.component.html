@@ -3,7 +3,7 @@
     <span class="selected-balls">{{ selectedBalls }}x</span>
     <input type="number" formControlName="bet" min="1" />
   </div>
-  <button type="submit">Ok</button>
+  <button type="submit" (click)="onSendBet()">Ok</button>
 </form>
 <p class="input-error" *ngIf="betControl.invalid && betControl.dirty">
   {{ getErrorMessage() }}

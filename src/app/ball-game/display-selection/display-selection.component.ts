@@ -15,6 +15,6 @@ export class DisplaySelectionComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.ballsList = this.drumService.drum;
+    this.ballsList = this.drumService.getDrum();
   }
 }

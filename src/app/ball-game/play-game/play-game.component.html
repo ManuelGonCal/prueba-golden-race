@@ -1,4 +1,5 @@
 <div class="wrapper">
   <p>TOTAL: {{ totalAmount }}</p>
-  <button>PLACE BET</button>
+  <button *ngIf="isDisabled" class="disabled">PLACE BET</button>
+  <button *ngIf="!isDisabled" (click)="playGame()">PLAY GAME</button>
 </div>

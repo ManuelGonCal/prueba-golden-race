@@ -1,14 +1,20 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { BallEntity } from 'src/app/Models/BallEntity';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DrumService {
-  drum: BallEntity[];
+  private drum: BallEntity[];
+  totalSelected$ = new Subject<number>();
 
   constructor() {
     this.drum = [];
+  }
+
+  getDrum() {
+    return this.drum;
   }
 
   InitializeDrum(amount: number) {
@@ -42,5 +48,11 @@ export class DrumService {
     }
 
     return color;
+  }
+
+  getNumSelected() {
+    this.totalSelected$.next(
+      this.getDrum().filter((ball) => ball.isSelected === true).length
+    );
   }
 }

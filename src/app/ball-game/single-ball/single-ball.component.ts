@@ -17,5 +17,6 @@ export class SingleBallComponent implements OnInit {
 
   toggleBall() {
     this.ball.isSelected = !this.ball.isSelected;
+    this.drumService.getNumSelected();
   }
 }

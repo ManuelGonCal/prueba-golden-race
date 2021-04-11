@@ -1,4 +1,10 @@
-import { Component, OnInit, Output } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  EventEmitter,
+  OnInit,
+  Output,
+} from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -14,6 +20,9 @@ import { betAmountValidator } from 'src/app/validators/bet-amount-validator';
   styleUrls: ['./input-bet.component.scss'],
 })
 export class InputBetComponent implements OnInit {
+  @Output()
+  sendBet: EventEmitter<number> = new EventEmitter();
+
   betForm: FormGroup;
   betControl: FormControl;
   selectedBalls: number;
@@ -31,7 +40,11 @@ export class InputBetComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.drumService.totalSelected$.subscribe((number) => {
+      this.selectedBalls = number;
+    });
+  }
 
   getErrorMessage() {
     if (this.betControl.hasError('required')) {
@@ -41,5 +54,9 @@ export class InputBetComponent implements OnInit {
     if (this.betControl.hasError('betAmount')) {
       return 'Bet has to be more than 5';
     }
+  }
+
+  onSendBet() {
+    this.sendBet.emit(this.betControl.value);
   }
 }

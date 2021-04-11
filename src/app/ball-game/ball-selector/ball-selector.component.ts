@@ -18,6 +18,6 @@ export class BallSelectorComponent implements OnInit {
 
   ngOnInit(): void {
     this.drumService.InitializeDrum(this.ballsAmount);
-    this.ballList = this.drumService.drum;
+    this.ballList = this.drumService.getDrum();
   }
 }
