@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+
 import { BallEntity } from 'src/app/Models/BallEntity';
 import { DrumService } from 'src/app/services/drum-service/drum.service';
 

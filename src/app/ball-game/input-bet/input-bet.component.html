@@ -1,7 +1,10 @@
-<form>
+<form [formGroup]="betForm">
   <div class="wrapper">
     <span class="selected-balls">{{ selectedBalls }}x</span>
-    <input type="number" />
+    <input type="number" formControlName="bet" min="1" />
   </div>
   <button type="submit">Ok</button>
 </form>
+<p class="input-error" *ngIf="betControl.invalid && betControl.dirty">
+  {{ getErrorMessage() }}
+</p>
