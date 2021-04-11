@@ -1,7 +1,8 @@
-<span class="ball"
-  style="background-color: {{ball.color}}"
+<span
+  class="ball"
+  style="background-color: {{ ball.color }} "
   (click)="toggleBall()"
-  [ngClass]="{'selected': ball.isSelected}"
+  [ngClass]="{ selected: ball.isSelected }"
 >
   {{ ball.number }}
 </span>

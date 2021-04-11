@@ -5,7 +5,7 @@ import { DrumService } from 'src/app/services/drum-service/drum.service';
 @Component({
   selector: 'app-ball-selector',
   templateUrl: './ball-selector.component.html',
-  styleUrls: ['./ball-selector.component.scss']
+  styleUrls: ['./ball-selector.component.scss'],
 })
 export class BallSelectorComponent implements OnInit {
   @Input()
@@ -13,12 +13,10 @@ export class BallSelectorComponent implements OnInit {
 
   ballList: BallEntity[];
 
-  constructor(private drumService: DrumService) {
-  }
+  constructor(private drumService: DrumService) {}
 
   ngOnInit(): void {
-    console.log(this.ballsAmount)
-    this.ballList = this.drumService.InitializeDrum(this.ballsAmount);
+    this.drumService.InitializeDrum(this.ballsAmount);
+    this.ballList = this.drumService.drum;
   }
-
 }

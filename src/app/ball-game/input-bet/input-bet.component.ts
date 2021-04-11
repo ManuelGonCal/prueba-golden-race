@@ -3,13 +3,14 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-input-bet',
   templateUrl: './input-bet.component.html',
-  styleUrls: ['./input-bet.component.scss']
+  styleUrls: ['./input-bet.component.scss'],
 })
 export class InputBetComponent implements OnInit {
+  selectedBalls: number;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() {
+    this.selectedBalls = 0;
   }
 
+  ngOnInit(): void {}
 }

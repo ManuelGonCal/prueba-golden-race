@@ -2,41 +2,40 @@ import { Injectable } from '@angular/core';
 import { BallEntity } from 'src/app/Models/BallEntity';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DrumService {
+  drum: BallEntity[];
 
-  constructor() { }
+  constructor() {
+    this.drum = [];
+  }
 
-  InitializeDrum(amount: number): BallEntity[] {
-    let drum: BallEntity[] = [];
-
-    for(let i = 1; i <= amount; i++) {
+  InitializeDrum(amount: number) {
+    for (let i = 1; i <= amount; i++) {
       const ball = {
         color: this.generateColor(),
         isSelected: false,
-        number: i
+        number: i,
       };
 
-      drum = [...drum, ball];
+      this.drum = [...this.drum, ball];
     }
-
-    return drum;
   }
 
   generateBall(maxIndex: number): BallEntity {
     const ball: BallEntity = {
       number: Math.floor(Math.random() * maxIndex) + 1,
       color: this.generateColor(),
-      isSelected: false
+      isSelected: false,
     };
 
-    return ball
+    return ball;
   }
 
   generateColor(): string {
     const letters = '0123456789ABCDEF';
-    let color = "#";
+    let color = '#';
 
     for (let i = 0; i < 6; i++) {
       color += letters[Math.floor(Math.random() * 16)];

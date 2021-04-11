@@ -1,0 +1,23 @@
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .wrapper {
+    height: 100%;
+    background-color: gray;
+
+    span {
+      padding: 5px;
+    }
+  }
+
+  button {
+    border: 1px solid black;
+    border-radius: 20%;
+    background-color: #00a3e8;
+    margin-left: 20px;
+    color: white;
+    padding: 5px 10px;
+  }
+}

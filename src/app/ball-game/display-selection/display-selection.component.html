@@ -1,3 +1,13 @@
-<ng-container *ngFor="let i of ballsAmount">
-  <span>a</span>
-</ng-container>
+<div class="wrapper">
+  <ng-container *ngFor="let ball of ballsList">
+    <span class="ball" *ngIf="!ball.isSelected"></span>
+    <ng-container *ngIf="ball.isSelected">
+      <span
+        class="ball ball-selected"
+        style="background-color: {{ ball.color }};"
+      >
+        {{ ball.number }}
+      </span>
+    </ng-container>
+  </ng-container>
+</div>

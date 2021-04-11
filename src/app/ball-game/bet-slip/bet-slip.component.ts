@@ -3,15 +3,10 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-bet-slip',
   templateUrl: './bet-slip.component.html',
-  styleUrls: ['./bet-slip.component.scss']
+  styleUrls: ['./bet-slip.component.scss'],
 })
 export class BetSlipComponent implements OnInit {
-  @Input()
-  ballsAmount: number;
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
